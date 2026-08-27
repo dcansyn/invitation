@@ -496,6 +496,7 @@
         return;
       }
       open();
+      musicToggle();
     });
     btn.addEventListener("click", open);
     gate.addEventListener("keydown", function (e) {
@@ -518,11 +519,11 @@
   }
 
   function initReply() {
-    var btn = $("#replyBtn"), alt = $("#replyAlt");
+    var btn = $("#replyBtn"),
+      alt = $("#replyAlt");
     if (!btn) return;
 
-    var msg = "Merhaba! " + (D.gelin || "") + " & " + (D.damat || "") +
-      " düğünü için dönüş yapıyorum: ";
+    var msg = "Merhaba! " + (D.gelin || "") + " & " + (D.damat || "") + " düğünü için dönüş yapıyorum: ";
 
     if (D.whatsapp) {
       var no = String(D.whatsapp).replace(/\D/g, "");
@@ -530,8 +531,7 @@
       $("#replyBtnText").textContent = "WhatsApp’tan yaz";
       alt.innerHTML = 'ya da <a href="tel:+' + no + '">' + telBicim(no) + "</a> numarasını arayabilirsin";
     } else if (D.eposta) {
-      btn.href = "mailto:" + D.eposta + "?subject=" +
-        encodeURIComponent("Düğün — geri dönüş") + "&body=" + encodeURIComponent(msg);
+      btn.href = "mailto:" + D.eposta + "?subject=" + encodeURIComponent("Düğün — geri dönüş") + "&body=" + encodeURIComponent(msg);
       btn.removeAttribute("target");
       $("#replyBtnText").textContent = "E-posta gönder";
       alt.textContent = D.eposta;
