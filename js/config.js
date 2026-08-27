@@ -45,11 +45,11 @@ window.DAVET = {
      photos/ klasörüne 1.jpg … 5.jpg olarak at.
      Dosya yoksa otomatik olarak elle çizilmiş bir çerçeve gösterilir. */
   galeri: [
-    { src: "photos/1.jpg", not: "ilk fotoğrafımız" },
-    { src: "photos/2.jpg", not: "o yaz" },
-    { src: "photos/3.jpg", not: "yağmurdan kaçarken" },
-    { src: "photos/4.jpg", not: "mutfakta" },
-    { src: "photos/5.jpg", not: "evet dediği an" },
+    { src: "photos/ilk.jpeg", not: "ilk fotoğrafımız" },
+    { src: "photos/evlilik.jpeg", not: "o yaz" },
+    { src: "photos/nisan.jpeg", not: "sonsuzluğa adım" },
+    { src: "photos/mutluluk.jpeg", not: "mutluluklarımız" },
+    { src: "photos/keyif.jpeg", not: "yolculuklarımız" },
   ],
 
   /* --- Geri dönüş (LDS) ---

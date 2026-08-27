@@ -1541,7 +1541,6 @@ body.is-revealed .scroll-hint {
   position: relative;
   overflow: hidden;
   background: var(--paper-2);
-  aspect-ratio: var(--ar, 3/4);
 }
 .frame-media img {
   width: 100%;
@@ -1562,7 +1561,7 @@ body.is-revealed .scroll-hint {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0.5rem;
+  bottom: 0;
   text-align: center;
   font-family: var(--hand);
   font-size: 1.32rem;
@@ -1601,7 +1600,7 @@ body.is-revealed .scroll-hint {
 }
 .frame:nth-child(2) {
   grid-column: 6 / span 3;
-  margin-top: clamp(2.5rem, 8vw, 6rem);
+  margin-top: clamp(2.5rem, 8vw, 1rem);
   --rot: 1.9deg;
   --ar: 3/4;
 }

@@ -16,6 +16,7 @@ index.html        yapı
 css/style.css     tüm tasarım ve animasyonlar
 js/config.js      ⭐ DÜZENLEYECEĞİN TEK DOSYA — isimler, tarih, mekân, program…
 js/main.js        animasyon ve etkileşim motoru
+favicon.svg       sekme ikonu — kurdele (favicon-32.png / -180.png yedekleri)
 photos/           fotoğraflarını buraya at (1.jpg … 5.jpg)
 ```
 
