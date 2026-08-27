@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Simge &amp; İsmail · Düğün Davetiyesi</title>
+    <meta name="description" content="22 Mayıs 2027 · Sarıyer, İstanbul. Sizi düğünümüzde aramızda görmek isteriz." />
+    <meta name="theme-color" content="#EFE8DC" />
+    <meta property="og:title" content="Simge &amp; İsmail · Düğün Davetiyesi" />
+    <meta property="og:description" content="22 Mayıs 2027 · Cumartesi · Sarıyer, İstanbul" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Manrope:wght@200..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ══ kağıt dokusu ══ -->
+    <div class="grain" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <!-- ══ gizli SVG tanımları ══ -->
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="silk" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#D4574A" />
+          <stop offset=".42" stop-color="#BF4436" />
+          <stop offset=".58" stop-color="#9E3126" />
+          <stop offset="1" stop-color="#C24A3C" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- ══════════════════════════════════════════════════════════
+     KAPAK — kurdele bağlı paket
+     ══════════════════════════════════════════════════════════ -->
+    <div class="gate" id="gate" role="dialog" aria-label="Davetiyeyi aç" aria-modal="true">
+      <div class="gate-half gate-l" aria-hidden="true"></div>
+      <div class="gate-half gate-r" aria-hidden="true"></div>
+
+      <div class="gate-stage">
+        <div class="parcel" id="parcel">
+          <div class="parcel-inner">
+            <span class="parcel-kicker">düğün<br />davetiyesi</span>
+            <span class="parcel-names">Simge<em>&amp;</em>İsmail</span>
+            <span class="parcel-date">11 · 10 · 2026</span>
+          </div>
+          <span class="parcel-side" id="parcelSide">Beykoz · İSTANBUL</span>
+
+          <!-- kurdele -->
+          <div class="ribbon ribbon-v" aria-hidden="true"><i></i></div>
+          <div class="ribbon ribbon-h" aria-hidden="true"><i></i></div>
+
+          <svg class="bow" viewBox="-130 -80 260 200" aria-hidden="true">
+            <g class="bow-tails">
+              <path d="M-6 6 C-13 30 -25 50 -44 66 L-49 54 L-58 56 C-42 42 -31 26 -24 6Z" />
+              <path d="M6 6 C13 30 25 50 44 66 L49 54 L58 56 C42 42 31 26 24 6Z" />
+            </g>
+            <g class="bow-loops">
+              <path class="loop-l" d="M0 3 C-23 -21 -56 -35 -76 -27 C-96 -19 -89 9 -57 17 C-33 23 -12 15 0 3Z" />
+              <path class="loop-r" d="M0 3 C23 -21 56 -35 76 -27 C96 -19 89 9 57 17 C33 23 12 15 0 3Z" />
+              <path class="bow-fold" d="M0 3 C-14 -1 -25 5 -30 16 C-16 18 -6 12 0 3Z" />
+              <path class="bow-fold" d="M0 3 C14 -1 25 5 30 16 C16 18 6 12 0 3Z" />
+            </g>
+            <ellipse class="bow-knot" cx="0" cy="4" rx="13" ry="11" />
+          </svg>
+        </div>
+
+        <button class="gate-cta" id="gateBtn" type="button">
+          <span class="gate-cta-hand">kurdeleyi çek</span>
+          <svg class="gate-cta-arrow" viewBox="0 0 40 62" aria-hidden="true">
+            <path d="M20 2 C21 22 12 30 15 46" />
+            <path d="M7 34 C11 42 14 52 15 47 C17 42 23 38 29 36" />
+          </svg>
+          <span class="sr-only">Davetiyeyi aç</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+     SAYFA
+     ══════════════════════════════════════════════════════════ -->
+    <main id="page" class="page">
+      <!-- kırmızı ipin çizildiği katman (JS dolduruyor) -->
+      <div class="thread-layer" aria-hidden="true">
+        <svg id="thread" preserveAspectRatio="none">
+          <path id="threadPath" class="thread-path" fill="none" />
+          <g id="threadKnots"></g>
+          <circle id="threadBead" class="thread-bead" r="5" opacity="0" />
+        </svg>
+      </div>
+
+      <div class="petals" id="petals" aria-hidden="true"></div>
+
+      <!-- ── 1. AÇILIŞ ───────────────────────────────────────── -->
+      <section class="hero" id="hero">
+        <span class="rail rail-l" aria-hidden="true">11.10.2026 — BEYKOZ, İSTANBUL</span>
+
+        <svg class="hero-sprig hero-sprig-a sprig" viewBox="0 0 120 200" aria-hidden="true"></svg>
+        <svg class="hero-sprig hero-sprig-b sprig" viewBox="0 0 120 200" aria-hidden="true"></svg>
+
+        <p class="hero-kicker rv" data-rev="fade">bir ömür, iki isim</p>
+
+        <h1 class="names">
+          <span class="name name-1"><span class="split">Simge</span></span>
+          <span class="amp" aria-hidden="true">
+            <svg viewBox="0 0 100 130">
+              <path class="dw" d="M74 122 C40 122 16 104 16 80 C16 58 38 48 52 38 C64 30 70 22 70 15 C70 7 63 3 55 3 C45 3 38 10 38 20 C38 34 50 48 66 66 C78 80 88 94 94 106" />
+            </svg>
+          </span>
+          <span class="name name-2"><span class="split">İsmail</span></span>
+        </h1>
+
+        <div class="hero-meta rv" data-rev="up"><span>Pazar</span><i></i><span>11 Ekim 2026</span><i></i><span>17:30</span></div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span>kaydır</span>
+          <svg viewBox="0 0 2 56" preserveAspectRatio="none"><path d="M1 0 V56" /></svg>
+        </div>
+        <span class="anchor" data-anchor="r"></span>
+      </section>
+
+      <!-- ── 2. DAVET METNİ ──────────────────────────────────── -->
+      <section class="verse" id="davet">
+        <span class="anchor" data-anchor="l"></span>
+        <p class="verse-line rv" data-rev="mask">İki ayrı hikâyenin</p>
+        <p class="verse-line rv" data-rev="mask">aynı cümlede buluştuğu gün,</p>
+        <p class="verse-line rv" data-rev="mask">soframızda bir sandalye</p>
+        <p class="verse-line rv" data-rev="mask"><em>sizin adınıza</em> boş duruyor.</p>
+        <p class="verse-sign rv" data-rev="up">— gelin, damat ve iki mutlu aile</p>
+      </section>
+
+      <!-- ── 3. HİKÂYE ───────────────────────────────────────── -->
+      <section class="story" id="hikaye">
+        <header class="sec-head">
+          <span class="sec-num" aria-hidden="true">I</span>
+          <h2 class="sec-title rv" data-rev="mask">Bir varmış,<br /><em>bir yokmuş</em></h2>
+        </header>
+        <ol class="story-list" id="storyList"></ol>
+        <span class="anchor" data-anchor="r"></span>
+      </section>
+
+      <!-- ── 4. PROGRAM ──────────────────────────────────────── -->
+      <section class="program" id="program">
+        <span class="anchor" data-anchor="l"></span>
+        <header class="sec-head">
+          <span class="sec-num" aria-hidden="true">II</span>
+          <h2 class="sec-title rv" data-rev="mask">Günün <em>akışı</em></h2>
+          <p class="hand prog-hand rv" data-rev="fade">nikâh saatinde yanımızda olmanız bizim için çok kıymetli ✿</p>
+        </header>
+        <div class="ticket rv" data-rev="up">
+          <div class="ticket-top">
+            <span class="ticket-day" id="tkDay">Pazar</span>
+            <span class="ticket-date" id="tkDate">11 Ekim 2026</span>
+          </div>
+          <ol class="prog-list" id="progList"></ol>
+          <div class="ticket-foot">
+            <span id="tkVenue">Pion Bahçe</span>
+            <span id="tkCity">Beykoz / İstanbul</span>
+          </div>
+          <span class="notch notch-l" aria-hidden="true"></span>
+          <span class="notch notch-r" aria-hidden="true"></span>
+        </div>
+      </section>
+
+      <!-- ── 5. GERİ SAYIM ───────────────────────────────────── -->
+      <section class="count" id="sayim">
+        <span class="anchor" data-anchor="r"></span>
+        <p class="count-lead rv" data-rev="fade">kavuşmamıza</p>
+        <div class="count-row" id="countRow">
+          <span class="cu"><span class="odo" data-odo="d"></span><i>gün</i></span>
+          <span class="cu"><span class="odo" data-odo="h"></span><i>saat</i></span>
+          <span class="cu"><span class="odo" data-odo="m"></span><i>dakika</i></span>
+          <span class="cu cu-s"><span class="odo" data-odo="s"></span><i>saniye</i></span>
+        </div>
+        <p class="count-note rv" data-rev="fade">kaldı.</p>
+        <a class="btn btn-ghost rv" data-rev="up" id="calBtn" href="#" target="_blank" rel="noopener">Takvime ekle</a>
+      </section>
+
+      <!-- ── 6. MEKÂN ────────────────────────────────────────── -->
+      <section class="venue" id="mekan">
+        <span class="anchor" data-anchor="l"></span>
+        <header class="sec-head">
+          <span class="sec-num" aria-hidden="true">III</span>
+          <h2 class="sec-title rv" data-rev="mask">Nerede <em>buluşuyoruz</em></h2>
+        </header>
+
+        <div class="venue-grid">
+          <figure class="map-wrap rv" data-rev="up">
+            <svg class="map" viewBox="0 0 420 320" aria-label="Mekânın konumu">
+              <rect class="map-bg" x="0" y="0" width="420" height="320" />
+              <path class="map-water" d="M0 236 C70 224 108 254 176 250 C250 246 296 214 420 226 L420 320 L0 320Z" />
+              <g class="map-blocks">
+                <rect x="26" y="34" width="86" height="58" />
+                <rect x="130" y="26" width="64" height="42" />
+                <rect x="214" y="40" width="96" height="52" />
+                <rect x="330" y="30" width="66" height="70" />
+                <rect x="30" y="122" width="70" height="66" />
+                <rect x="252" y="126" width="80" height="58" />
+                <rect x="352" y="130" width="46" height="52" />
+              </g>
+              <path class="map-park" d="M126 118 C168 106 208 118 212 146 C216 176 178 194 148 188 C114 181 100 130 126 118Z" />
+              <g class="map-roads">
+                <path d="M0 106 H420" />
+                <path d="M0 200 H420" />
+                <path d="M118 0 V320" />
+                <path d="M240 0 V320" />
+                <path d="M340 0 V208" />
+              </g>
+              <path class="map-route" d="M14 300 C60 292 78 250 118 214 C150 186 182 190 214 168 C238 152 244 128 252 112" />
+              <g class="map-pin">
+                <circle class="pin-pulse" cx="252" cy="108" r="10" />
+                <circle class="pin-pulse pin-pulse-2" cx="252" cy="108" r="10" />
+                <g class="pin-drop">
+                  <path class="pin-body" d="M252 112 C239 98 232 88 232 78 A20 20 0 0 1 272 78 C272 88 265 98 252 112Z" />
+                  <circle class="pin-dot" cx="252" cy="78" r="6" />
+                </g>
+              </g>
+              <text class="map-lbl" x="152" y="152">Pion</text>
+              <text class="map-lbl" x="322" y="288">Bahçe</text>
+            </svg>
+          </figure>
+
+          <div class="venue-info">
+            <h3 class="rv" data-rev="up" id="venueName">Yalı Bahçe Konağı</h3>
+            <p class="venue-city rv" data-rev="up" id="venueCity">Sarıyer / İstanbul</p>
+            <p class="venue-addr rv" data-rev="up" id="venueAddr"></p>
+            <p class="venue-tel rv" data-rev="up"><a id="venueTel" href="#"></a></p>
+            <a class="btn rv" data-rev="up" id="mapBtn" href="#" target="_blank" rel="noopener">
+              Yol tarifi al
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" /></svg>
+            </a>
+            <p class="hand venue-hand">otopark ve vale hizmeti mevcuttur ✿</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 7. GALERİ ───────────────────────────────────────── -->
+      <section class="gallery" id="galeri">
+        <span class="anchor" data-anchor="r"></span>
+        <header class="sec-head sec-head-c">
+          <span class="sec-num" aria-hidden="true">IV</span>
+          <h2 class="sec-title rv" data-rev="mask">Biriktirdiklerimiz</h2>
+        </header>
+        <div class="frames" id="frames"></div>
+      </section>
+
+      <!-- ── 8. LDS ──────────────────────────────────────────── -->
+      <section class="rsvp" id="lds">
+        <span class="anchor" data-anchor="c"></span>
+        <header class="sec-head sec-head-c">
+          <span class="sec-num" aria-hidden="true">V</span>
+          <h2 class="sec-title rv" data-rev="mask">Bize <em>haber ver</em></h2>
+          <p class="sec-sub rv" data-rev="fade">Sofrayı doğru kurabilmemiz için <b id="ldsDate"></b> tarihine kadar bir satır yazman yeter.</p>
+        </header>
+
+        <div class="reply rv" data-rev="up">
+          <a class="btn btn-solid" id="replyBtn" href="#" target="_blank" rel="noopener">
+            <span id="replyBtnText">WhatsApp’tan yaz</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" /></svg>
+          </a>
+          <p class="reply-alt" id="replyAlt"></p>
+          <p class="hand reply-hand">bir “geliyoruz” yazman bile yeter&nbsp;✿</p>
+        </div>
+      </section>
+
+      <!-- ── 9. KAPANIŞ ──────────────────────────────────────── -->
+      <footer class="closing" id="kapanis">
+        <!-- ip, kapanış metninin sol yanından dolaşıp fiyonka insin -->
+        <span class="anchor" data-anchor="l" data-at="0.08"></span>
+
+        <p class="closing-line rv" data-rev="mask">Sizi aramızda görmek,</p>
+        <p class="closing-line rv" data-rev="mask"><em>hayatımızın en güzel hediyesi</em> olur.</p>
+
+        <!-- ip burada kendini fiyonk yapıp bağlıyor -->
+        <svg class="crest" id="crest" viewBox="0 0 260 150" aria-hidden="true">
+          <path class="dw" d="M130 76 C106 44 52 30 32 56 C14 79 46 108 102 94 C114 91 124 85 130 76Z" />
+          <path class="dw" d="M130 76 C154 44 208 30 228 56 C246 79 214 108 158 94 C146 91 136 85 130 76Z" />
+          <path class="dw" d="M124 82 C114 106 96 126 68 142" />
+          <path class="dw" d="M136 82 C146 106 164 126 192 142" />
+          <path class="dw" d="M68 142 C76 132 80 124 81 116" />
+          <path class="dw" d="M192 142 C184 132 180 124 179 116" />
+          <ellipse class="crest-knot" cx="130" cy="77" rx="11" ry="9" />
+        </svg>
+
+        <div class="mono rv" data-rev="up" id="monogram">E &amp; İ</div>
+        <p class="hand closing-hand">en büyük hediyeniz, o gün burada olmanız ✿</p>
+
+        <div class="colophon">
+          <span id="colDate">22 · 05 · 2027</span>
+          <span class="colophon-dot" aria-hidden="true"></span>
+          <span id="colVenue">Sarıyer, İstanbul</span>
+        </div>
+      </footer>
+    </main>
+
+    <!-- ══ müzik kutusu ══ -->
+    <button class="music" id="music" type="button" aria-pressed="false" title="Müzik kutusu">
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="sr-only">Müziği aç veya kapat</span>
+    </button>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
